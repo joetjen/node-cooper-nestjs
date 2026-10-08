@@ -1,0 +1,81 @@
+{
+  "name": "cooper-nestjs",
+  "version": "0.1.0",
+  "private": false,
+  "author": "Jan Oetjen <joetjen.riveting388@passmail.net> (http://joetjen.net)",
+  "description": "A NestJS module that loads an application's CASC configuration once, at startup, with cooper-config, and feeds it to @nestjs/config's ConfigService -- each top-level block injectable on its own.",
+  "homepage": "https://github.com/joetjen/node-cooper-nestjs",
+  "type": "module",
+  "main": "./src/cooper-nestjs.js",
+  "types": "./types/cooper-nestjs.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/cooper-nestjs.d.ts",
+      "default": "./src/cooper-nestjs.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "types",
+    "guides"
+  ],
+  "license": "Apache-2.0",
+  "directories": {
+    "src": "./src"
+  },
+  "dependencies": {
+    "cooper-config": "file:../node-cooper-config"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^11.0.0 || ^12.0.0",
+    "@nestjs/config": "^4.0.0 || ^12.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@nestjs/config": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@nestjs/common": "^12.1.2",
+    "@nestjs/config": "^12.0.1",
+    "@nestjs/core": "^12.1.2",
+    "@nestjs/testing": "^12.1.2",
+    "@types/node": "^26.2.0",
+    "auto-changelog": "^2.6.0",
+    "chai": "^6.2.2",
+    "mocha": "^11.7.6",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "typedoc": "^0.28.20",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20.19.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "test": "npx mocha --recursive test/",
+    "autotest": "npx mocha --recursive --watch test/",
+    "typecheck": "npx tsc --checkJs --noEmit && npx tsc --noEmit -p test/types",
+    "precommit": "npm run typecheck && npm test",
+    "docs": "npx typedoc",
+    "version": "npx auto-changelog --package --template keepachangelog && git add CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joetjen/node-cooper-nestjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joetjen/node-cooper-nestjs/issues",
+    "email": "joetjen.riveting388@passmail.net"
+  },
+  "keywords": [
+    "casc",
+    "cooper",
+    "config",
+    "configuration",
+    "nestjs",
+    "nest"
+  ]
+}
