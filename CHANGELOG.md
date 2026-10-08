@@ -13,7 +13,8 @@ Published as **`@joetjen/cooper-nestjs`**, beside `@joetjen/cooper`.
 
 - Project scaffold after `node-cooper-config`: `package.json` (Node.js
   20.19+, `@nestjs/common` 11 or 12 and an optional `@nestjs/config` 4 or
-  12 as peer dependencies, `cooper-config` as the runtime dependency),
+  12 as peer dependencies, `@joetjen/cooper-config` ^0.1.0 as the runtime
+  dependency),
   Mocha/Chai tests against a real NestJS testing module, `tsc --checkJs`
   type-checking, TypeDoc API docs, GitHub Actions for CI (NestJS 11
   tested too), docs and a monthly dependency audit, and the Apache

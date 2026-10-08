@@ -5,17 +5,8 @@ need to know before opening an issue or a pull request.
 
 ## Getting started
 
-`cooper` and `cooper-config` are not published yet, so check out
-[`node-cooper`](https://github.com/joetjen/node-cooper) and
-[`node-cooper-config`](https://github.com/joetjen/node-cooper-config)
-next to this repository first. `package.json` depends on
-`cooper-config` as `file:../node-cooper-config`.
-
 ```sh
-git clone <node-cooper repository> node-cooper
-git clone <node-cooper-config repository> node-cooper-config
-git clone <this repository> node-cooper-nestjs
-cd node-cooper-config && npm install && cd ..
+git clone https://github.com/joetjen/node-cooper-nestjs.git
 cd node-cooper-nestjs
 npm install
 npm test
