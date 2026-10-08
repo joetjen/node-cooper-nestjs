@@ -4,7 +4,7 @@ Instructions for AI agents working in this Node.js codebase.
 
 `cooper-nestjs` is a NestJS module that loads an application's CASC
 configuration once, at startup, with
-[`cooper-config`](../node-cooper-config) (`node-cooper-config`), and
+[`@joetjen/cooper-config`](https://github.com/joetjen/node-cooper-config) (`node-cooper-config`), and
 feeds it to `@nestjs/config`'s `ConfigService`. It is the NestJS
 counterpart of the PHP framework adapters, `php-cooper-symfony` and
 `php-cooper-laravel`, and the sibling of `node-cooper-fastify`.
@@ -86,11 +86,8 @@ counterpart of the PHP framework adapters, `php-cooper-symfony` and
 
 ## Dependency boundaries
 
-- `cooper-config` is the only runtime dependency; `@nestjs/common` and
-  an optional `@nestjs/config` are peers. `cooper-config` is
-  unpublished, so `package.json` depends on it as
-  `file:../node-cooper-config`. CI checks it out, and `node-cooper`,
-  next to this repository.
+- `@joetjen/cooper-config` is the only runtime dependency, from npm;
+  `@nestjs/common` and an optional `@nestjs/config` are peers.
 
 ## Git workflow, commits, versioning
 
