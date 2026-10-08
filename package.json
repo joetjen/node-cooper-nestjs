@@ -1,7 +1,10 @@
 {
-  "name": "cooper-nestjs",
+  "name": "@joetjen/cooper-nestjs",
   "version": "0.1.0",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Jan Oetjen <joetjen.riveting388@passmail.net> (http://joetjen.net)",
   "description": "A NestJS module that loads an application's CASC configuration once, at startup, with cooper-config, and feeds it to @nestjs/config's ConfigService -- each top-level block injectable on its own.",
   "homepage": "https://github.com/joetjen/node-cooper-nestjs",
@@ -25,7 +28,7 @@
     "src": "./src"
   },
   "dependencies": {
-    "cooper-config": "file:../node-cooper-config"
+    "@joetjen/cooper-config": "file:../node-cooper-config"
   },
   "peerDependencies": {
     "@nestjs/common": "^11.0.0 || ^12.0.0",

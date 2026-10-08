@@ -3,7 +3,7 @@
 
 import { Injectable, Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { CooperConfigModule, CooperConfig, InjectCooper, getCooperToken, version } from 'cooper-nestjs';
+import { CooperConfigModule, CooperConfig, InjectCooper, getCooperToken, version } from '@joetjen/cooper-nestjs';
 
 interface DbConfig {
   host: string;

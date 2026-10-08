@@ -24,7 +24,7 @@
 
 import { createRequire } from 'node:module';
 import { Inject, Module } from '@nestjs/common';
-import * as cooperConfig from 'cooper-config';
+import * as cooperConfig from '@joetjen/cooper-config';
 import { ensureLoaded } from './load.js';
 
 /** The installed `cooper-nestjs` package version, read from `package.json`. */
@@ -50,7 +50,7 @@ export class CooperConfig {
    * The value at `path`, which must be there.
    * @param {import('../types/cooper-nestjs.js').KeyPath} path
    * @returns {any} the value, deep-frozen
-   * @throws {import('cooper-config').CooperConfigError} naming `path` when nothing is there
+   * @throws {import('@joetjen/cooper-config').CooperConfigError} naming `path` when nothing is there
    */
   require(path) {
     return cooperConfig.require(/** @type {any} */ (path));
