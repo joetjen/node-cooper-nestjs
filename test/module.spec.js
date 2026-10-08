@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Injectable, Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Test } from '@nestjs/testing';
-import * as cooperConfig from 'cooper-config';
+import * as cooperConfig from '@joetjen/cooper-config';
 import { CooperConfigModule, CooperConfig, InjectCooper, getCooperToken } from '../src/cooper-nestjs.js';
 import { project, cleanup, hermetic, HEADER } from './support/project.js';
 

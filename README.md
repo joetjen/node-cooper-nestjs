@@ -11,7 +11,7 @@ where the values come from: `.env` loading and configuration factories.
 `.env` files are read by [`cooper`](https://github.com/joetjen/node-cooper)
 itself. The loading and reading are
 [`cooper-config`](https://github.com/joetjen/node-cooper-config)'s, so
-`ConfigService`, this package and `require('cooper-config')` all read
+`ConfigService`, this package and `require('@joetjen/cooper-config')` all read
 the same configuration.
 
 ```text
@@ -55,7 +55,7 @@ export class Mailer {
 ## Install
 
 ```sh
-npm install cooper-nestjs @nestjs/config
+npm install @joetjen/cooper-nestjs @nestjs/config
 ```
 
 NestJS 11 and 12 are supported, with `@nestjs/config` 4 and 12
@@ -76,7 +76,7 @@ what it provides without importing it.
 | | |
 | --- | --- |
 | options given | loads with them, cooper-config's load options (`path`, `root`, `env`, `dotenvDir`, `modules`, ...) |
-| no options, something loaded | reads that: by `cooper-config` itself or `--import cooper-config/register` |
+| no options, something loaded | reads that: by `cooper-config` itself or `--import @joetjen/cooper-config/register` |
 | no options, nothing loaded | loads `config/config.casc` under the project root |
 | an unknown option | `TypeError` |
 | the document does not load | `NestFactory.create()` rejects with `CooperConfigError`; the app never starts |

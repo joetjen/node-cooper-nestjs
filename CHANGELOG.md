@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+Published as **`@joetjen/cooper-nestjs`**, beside `@joetjen/cooper`.
+
 ### Added
 
 - Project scaffold after `node-cooper-config`: `package.json` (Node.js
