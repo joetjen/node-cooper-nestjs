@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ["20", "22", "24"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Precommit
+        run: npm run precommit
+
+      # The peer range covers NestJS 11 (CommonJS) and 12 (ES modules); the
+      # lockfile installs 12, so 11 is tested here.
+      - name: Test against NestJS 11 and @nestjs/config 4
+        run: npm install --no-save @nestjs/common@^11 @nestjs/core@^11 @nestjs/testing@^11 @nestjs/config@^4 && npm test
+
+      - name: Verify package assembles (npm pack)
+        run: npm pack --dry-run
